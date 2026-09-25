@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TechAvıV1 — Akıllı Fiyat Takip</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg"></div>
+<header>
+  <div class="logo"><span>◉</span> TechAvıV1</div>
+  <nav>
+    <button data-page="home">Ana Sayfa</button>
+    <button data-page="deals">🔥 Fırsatlar</button>
+    <button data-page="drops">📉 Fiyat Düşüşleri</button>
+    <button data-page="lowest">🏆 Dip Fiyatlar</button>
+  </nav>
+  <div class="head-actions">
+    <button id="favBtn" class="ghost">♡ Favoriler <i id="favCount">0</i></button>
+    <button id="alarmBtn" class="ghost">🔔 Alarmlar <i id="alarmCount">0</i></button>
+    <button id="loginBtn" class="primary">Giriş Yap</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">GERÇEK FİYATI TAKİP ET</div>
+    <h1>İndirimleri sen arama,<br><em>TechAvı</em> bulsun.</h1>
+    <p>Ürünleri ara, mağazaları karşılaştır, fiyat geçmişini gör ve istediğin fiyata düşünce haber al.</p>
+    <div class="search-wrap"><div class="search"><span>⌕</span><input id="search" placeholder="Ürün, marka veya model ara..." autocomplete="off"><kbd>Ctrl K</kbd></div><div id="suggestions" class="suggestions hidden"></div></div>
+  </div>
+  <div class="radar-card">
+    <div class="radar-ring r1"></div><div class="radar-ring r2"></div><div class="radar-ring r3"></div>
+    <div class="radar-sweep"></div><div class="radar-dot d1"></div><div class="radar-dot d2"></div><div class="radar-dot d3"></div>
+    <div class="radar-center">◉<small>RADAR<br>AKTİF</small></div>
+  </div>
+</section>
+
+<section class="toolbar"><div><strong id="sectionTitle">🔥 Bugünün Sıcak Fırsatları</strong><span id="resultCount"></span></div></section>
+<section id="grid" class="grid"></section>
+
+<section class="dashboard"><div class="dash-title"><span>🏪</span><div><b>Canlı Mağaza Altyapısı</b><small id="storeStatus">Mağaza bağlantıları kontrol ediliyor...</small></div></div><div id="storeList" style="display:flex;flex-wrap:wrap;gap:7px;margin-top:14px"></div></section><section class="dashboard">
+  <div class="dash-title"><span>⚡</span><div><b>Akıllı Fiyat Takibi</b><small>TechAvıV1 senin için takip eder.</small></div></div>
+  <div class="dash-cards">
+    <div class="dash"><span>♡</span><b id="dashFav">0</b><small>Favori ürün</small></div>
+    <div class="dash"><span>🔔</span><b id="dashAlarm">0</b><small>Aktif fiyat alarmı</small></div>
+    <div class="dash"><span>📉</span><b>24</b><small>Bugünkü fiyat düşüşü</small></div>
+    <div class="dash"><span>🏆</span><b>12</b><small>Dip fiyat</small></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div><div class="eyebrow">FİYAT ALARMI</div><h2>“Düşünce haber ver” demen yeter.</h2><p>Bir ürün seç, hedef fiyatını gir. Tarayıcı bu cihazda alarmını saklar.</p></div>
+  <button id="ctaBtn" class="primary big">🔔 Alarm Oluştur</button>
+</section>
+</main>
+
+<div id="modal" class="modal hidden"><div class="modal-box"><button class="close">×</button><div id="modalBody"></div></div></div>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body></html>
